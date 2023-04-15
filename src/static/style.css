@@ -36,4 +36,42 @@ h2 {
   margin-bottom: 1rem;
   padding: 0;
 }
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0rem;
+}
 
+nav b {
+  font-size: large;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: cornflowerblue;
+}
+
+.layout-content {
+  padding-top: 1.5rem;
+  max-width: 1280px;
+  margin: auto;
+}
+.layout-nav {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.nav-container {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0rem 3rem;
+}
+.content-container {
+  width: 100vw;
+  padding: 0rem 3rem;
+}
