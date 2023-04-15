@@ -1,0 +1,48 @@
+:root {
+  --clr-table: rgba(0,0,0,0.15);
+}
+
+table {
+  border: 1px solid var(--clr-table);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid var(--clr-table);
+  padding: 0.25rem 1rem;
+  text-align: left;
+  color: #000;
+}
+
+thead {
+  background-color: var(--clr-table);
+}
+tbody {
+  background-color: #fff;
+  color: #000;
+}
+
+tbody a {
+  color: #000;
+}
+
+thead th {
+  color: whitesmoke;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.fit {
+  width: 1px;
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.number {
+  font-family: monospace;
+  text-align: right;
+}

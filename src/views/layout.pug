@@ -1,0 +1,15 @@
+html
+  head
+    link(rel="stylesheet", href="/style.css")
+    title My Cat Website
+    block head
+  body
+    .layout
+      .nav-container
+        .layout-nav
+          include mixins/nav
+          +navigation()
+        
+      .content-container
+        .layout-content
+          block content
