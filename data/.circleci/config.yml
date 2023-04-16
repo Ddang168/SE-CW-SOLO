@@ -1,0 +1,12 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.7.0
+jobs:
+  build:
+    working_directory: ~/SE-CW-SOLO/src
+    docker:
+      - image: cimg/node:lts
+    steps:  
+      - checkout:
+          path: ~/SE-CW-SOLO
+      - run: npm install

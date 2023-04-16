@@ -57,7 +57,7 @@ INSERT INTO `city` VALUES (3,'Herat','AFG','Herat',186800);
 INSERT INTO `city` VALUES (4,'Mazar-e-Sharif','AFG','Balkh',127800);
 INSERT INTO `city` VALUES (5,'Amsterdam','NLD','Noord-Holland',731200);
 INSERT INTO `city` VALUES (6,'Rotterdam','NLD','Zuid-Holland',593321);
-INSERT INTO `city` VALUES (7,'Haag','NLD','Zuid-Holland',440900);
+INSERT INTO `city` VALUES (7,'Haag','NLD','Zuid-Holland',514861);
 INSERT INTO `city` VALUES (8,'Utrecht','NLD','Utrecht',234323);
 INSERT INTO `city` VALUES (9,'Eindhoven','NLD','Noord-Brabant',201843);
 INSERT INTO `city` VALUES (10,'Tilburg','NLD','Noord-Brabant',193238);
