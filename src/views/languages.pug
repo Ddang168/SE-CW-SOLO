@@ -1,0 +1,22 @@
+extends layout.pug
+
+block head
+  link(rel="stylesheet", href="/cities.css")
+
+block content
+  h2 Languages
+  table
+    thead
+      th ID
+      th Country
+      th Language
+      th Official
+      th Precentage(%)
+    tbody
+      each row, i in rows
+        tr
+          td.fit #{i + 1}
+          td.fit #{row.CountryCode}
+          td #{row.Language}
+          td #{row.IsOfficial == "T" ? "True" : "False"}
+          td #{row.Percentage}

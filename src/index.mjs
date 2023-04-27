@@ -41,13 +41,37 @@ app.get("/gallery", (req, res) => {
 
 // About route
 app.get("/about", (req, res) => {
-  res.render("about", { title: "Boring about page" });
+  res.render("about", { title: "About page", content: "An organisation that reports on population information" });
 });
 
 app.get("/cities", async (req, res) => {
   const [rows, fields] = await db.getCities();
   /* Render cities.pug with data passed as plain object */
   return res.render("cities", { rows, fields });
+});
+
+app.get("/countries", async (req, res) => {
+  const rows = await db.getCountries();
+  /* Render cities.pug with data passed as plain object */
+  return res.render("countries", { rows });
+});
+
+app.get("/capitals", async (req, res) => {
+  const [rows, fields] = await db.getCapitals();
+  /* Render cities.pug with data passed as plain object */
+  return res.render("capitals", { rows, fields });
+});
+
+app.get("/languages", async (req, res) => {
+  const [rows, fields] = await db.getLanguages();
+  /* Render cities.pug with data passed as plain object */
+  return res.render("languages", { rows, fields });
+});
+
+app.get("/popular_languages", async (req, res) => {
+  const [rows, fields] = await db.getPopularLanguages();
+  /* Render cities.pug with data passed as plain object */
+  return res.render("popular_languages", { rows, fields });
 });
 
 app.get('/cities/:id', async (req, res) => {

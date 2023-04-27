@@ -1,0 +1,19 @@
+extends layout.pug
+
+block head
+  link(rel="stylesheet", href="/cities.css")
+
+block content
+  h2 Popular Languages
+  table
+    thead
+      th ID
+      th Language
+      th Population
+    tbody
+      each row, i in rows
+        tr
+          td.fit #{i + 1}
+          td.fit #{row.Language}
+          - const population = new Intl.NumberFormat().format(row.number);
+          td.fit #{population}

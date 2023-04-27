@@ -1,0 +1,28 @@
+extends layout.pug
+
+block head
+  link(rel="stylesheet", href="/cities.css")
+
+block content
+  h2 Countries
+  table
+    thead
+      th ID
+      th Code
+      th Name
+      th Continent
+      th Region
+      th Population
+      th Capital
+    tbody
+      each row, i in rows
+        tr
+          td.fit #{i + 1}
+          td.fit #{row.code}
+          td #{row.name}
+          td #{row.continent}
+          td #{row.region}
+          - const population = new Intl.NumberFormat().format(row.population);
+          td.fit.number #{population}
+          td #{row.capital}
+          

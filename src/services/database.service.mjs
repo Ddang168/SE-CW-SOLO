@@ -34,6 +34,52 @@ export default class DatabaseService {
     }
   }
 
+  /* Get a list of all capitals */
+  async getCapitals() {
+    try {
+      // Fetch capitals from database
+      const sql = `SELECT country.Code, city.* FROM country INNER JOIN city ON country.Capital = city.ID`;
+      const data = await this.conn.execute(sql);
+      return data;
+    } catch (err) {
+      // Handle error...
+      console.error(err);
+      return undefined;
+    }
+  }
+
+  /* Get a list of all languages */
+  async getLanguages() {
+    try {
+      // Fetch languages from database
+      const sql = `SELECT * FROM countrylanguage`;
+      const data = await this.conn.execute(sql);
+      return data;
+    } catch (err) {
+      // Handle error...
+      console.error(err);
+      return undefined;
+    }
+  }
+
+  /* Get a list of all languages */
+  async getPopularLanguages() {
+    try {
+      const lang = "Chinese";
+      // Fetch popular languages from database
+      const sql = `SELECT countrylanguage.Language, SUM(country.Population * countrylanguage.Percentage * 0.01) as number 
+          FROM countrylanguage INNER JOIN country ON country.Code = countrylanguage.CountryCode 
+          GROUP BY countrylanguage.Language
+        `;
+      const data = await this.conn.execute(sql);
+      return data;
+    } catch (err) {
+      // Handle error...
+      console.error(err);
+      return undefined;
+    }
+  }
+
   /* Get a particular city by ID, including country information */
   async getCity(cityId) {
     const sql = `
@@ -74,9 +120,9 @@ export default class DatabaseService {
 
   /* Get a list of countries */
   async getCountries() {
-    const sql = `SELECT * FROM country`;
+    const sql = `SELECT country.*, city.Name as Capital_Name FROM country INNER JOIN city ON country.Capital = city.ID`;
     const [rows, fields] = await this.conn.execute(sql);
-    const countries = rows.map(c => new Country(c.Code, c.Name, c.Continent, c.Region, c.Population));
+    const countries = rows.map(c => new Country(c.Code, c.Name, c.Continent, c.Region, c.Population, c.Capital_Name));
     return countries;
   }
 }
