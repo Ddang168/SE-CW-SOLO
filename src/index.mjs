@@ -58,19 +58,19 @@ app.get("/countries", async (req, res) => {
 
 app.get("/capitals", async (req, res) => {
   const [rows, fields] = await db.getCapitals();
-  /* Render cities.pug with data passed as plain object */
+  /* Render capitals.pug with data passed as plain object */
   return res.render("capitals", { rows, fields });
 });
 
 app.get("/languages", async (req, res) => {
   const [rows, fields] = await db.getLanguages();
-  /* Render cities.pug with data passed as plain object */
+  /* Render languages.pug with data passed as plain object */
   return res.render("languages", { rows, fields });
 });
 
 app.get("/popular_languages", async (req, res) => {
   const [rows, fields] = await db.getPopularLanguages();
-  /* Render cities.pug with data passed as plain object */
+  /* Render popular_languages.pug with data passed as plain object */
   return res.render("popular_languages", { rows, fields });
 });
 
